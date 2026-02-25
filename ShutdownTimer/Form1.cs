@@ -21,6 +21,7 @@ namespace ShutdownTimer {
             updateTimer.Interval = 1000;
             updateTimer.Tick += UpdateTimer_Tick;
             trayMenu.Closed += TrayMenu_Closed;
+            customDuratationBox.TextChanged += CustomDurationBox_TextChanged;
         }
 
         /// <summary>
@@ -107,7 +108,8 @@ namespace ShutdownTimer {
             updateTimer.Start();
             // Update the visibility of the reset timer button based on the shutdown state
             resetTimerBtn.Visible = logic.isShutdownScheduled();
-            customDuratationBox.Visible = logic.isShutdownScheduled();
+            timeLabel.Visible = logic.isShutdownScheduled();
+            UpdateUnitMenuState();
         }
 
         private void TrayMenu_Closed(object sender, ToolStripDropDownClosedEventArgs e) {
@@ -158,6 +160,14 @@ namespace ShutdownTimer {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) {
                 e.Handled = true; // Ignore the input
             }
+        }
+
+        private void CustomDurationBox_TextChanged(object sender, EventArgs e) {
+            UpdateUnitMenuState();
+        }
+
+        private void UpdateUnitMenuState() {
+            unitToolStripMenuItem.Enabled = !string.IsNullOrWhiteSpace(customDuratationBox.Text);
         }
 
         /// <summary>
