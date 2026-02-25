@@ -141,7 +141,7 @@ namespace ShutdownTimer {
         /// <returns>true if the resulting shutdown time would be more than ten years from now; otherwise, false.</returns>
         public bool CheckIfScheduledTimeWouldExtend10Years(long additionalSeconds)
         {
-            DateTime newShutdownTime = (!shutdownAt.HasValue) ? shutdownAt.Value.AddSeconds(additionalSeconds) : DateTime.Now.AddSeconds(additionalSeconds);
+            DateTime newShutdownTime = (shutdownAt.HasValue) ? shutdownAt.Value.AddSeconds(additionalSeconds) : DateTime.Now.AddSeconds(additionalSeconds);
             DateTime maxAllowedTime = DateTime.Now.AddYears(10);
             return newShutdownTime > maxAllowedTime;
         }
