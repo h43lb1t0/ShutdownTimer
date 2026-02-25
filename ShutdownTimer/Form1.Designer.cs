@@ -117,7 +117,7 @@ namespace ShutdownTimer
             // min15Btn
             // 
             this.min15Btn.Name = "min15Btn";
-            this.min15Btn.Size = new System.Drawing.Size(359, 44);
+            this.min15Btn.Size = new System.Drawing.Size(221, 44);
             this.min15Btn.Tag = "15";
             this.min15Btn.Text = "15 min";
             this.min15Btn.Click += new System.EventHandler(this.AddTime_Click);
@@ -126,7 +126,7 @@ namespace ShutdownTimer
             // 
             this.min30Btn.MergeIndex = 0;
             this.min30Btn.Name = "min30Btn";
-            this.min30Btn.Size = new System.Drawing.Size(359, 44);
+            this.min30Btn.Size = new System.Drawing.Size(221, 44);
             this.min30Btn.Tag = "30";
             this.min30Btn.Text = "30 min";
             this.min30Btn.Click += new System.EventHandler(this.AddTime_Click);
@@ -134,7 +134,7 @@ namespace ShutdownTimer
             // min60Btn
             // 
             this.min60Btn.Name = "min60Btn";
-            this.min60Btn.Size = new System.Drawing.Size(359, 44);
+            this.min60Btn.Size = new System.Drawing.Size(221, 44);
             this.min60Btn.Tag = "60";
             this.min60Btn.Text = "60 min";
             this.min60Btn.Click += new System.EventHandler(this.AddTime_Click);
@@ -142,7 +142,7 @@ namespace ShutdownTimer
             // min90Btn
             // 
             this.min90Btn.Name = "min90Btn";
-            this.min90Btn.Size = new System.Drawing.Size(359, 44);
+            this.min90Btn.Size = new System.Drawing.Size(221, 44);
             this.min90Btn.Tag = "90";
             this.min90Btn.Text = "1.5 h";
             this.min90Btn.Click += new System.EventHandler(this.AddTime_Click);
@@ -150,7 +150,7 @@ namespace ShutdownTimer
             // min120Btn
             // 
             this.min120Btn.Name = "min120Btn";
-            this.min120Btn.Size = new System.Drawing.Size(359, 44);
+            this.min120Btn.Size = new System.Drawing.Size(221, 44);
             this.min120Btn.Tag = "120";
             this.min120Btn.Text = "2 h";
             this.min120Btn.Click += new System.EventHandler(this.AddTime_Click);
@@ -181,7 +181,8 @@ namespace ShutdownTimer
             this.dayBtn});
             this.unitToolStripMenuItem.Name = "unitToolStripMenuItem";
             this.unitToolStripMenuItem.Size = new System.Drawing.Size(300, 38);
-            this.unitToolStripMenuItem.Text = "unit";
+            this.unitToolStripMenuItem.Text = "In (time unit)";
+            this.unitToolStripMenuItem.Click += new System.EventHandler(this.unitToolStripMenuItem_Click);
             // 
             // minBtn
             // 

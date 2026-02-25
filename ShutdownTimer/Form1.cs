@@ -105,6 +105,9 @@ namespace ShutdownTimer {
         private void trayMenu_Opening(object sender, CancelEventArgs e) {
             updateTimeLabel();
             updateTimer.Start();
+            // Update the visibility of the reset timer button based on the shutdown state
+            resetTimerBtn.Visible = logic.isShutdownScheduled();
+            customDuratationBox.Visible = logic.isShutdownScheduled();
         }
 
         private void TrayMenu_Closed(object sender, ToolStripDropDownClosedEventArgs e) {
