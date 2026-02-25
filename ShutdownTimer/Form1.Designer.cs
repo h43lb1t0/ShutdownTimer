@@ -78,13 +78,13 @@ namespace ShutdownTimer
             this.customDuratationBox,
             this.unitToolStripMenuItem});
             this.trayMenu.Name = "trayMenu";
-            this.trayMenu.Size = new System.Drawing.Size(301, 325);
+            this.trayMenu.Size = new System.Drawing.Size(248, 281);
             this.trayMenu.Opening += new System.ComponentModel.CancelEventHandler(this.trayMenu_Opening);
             // 
             // exitBtn
             // 
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(300, 38);
+            this.exitBtn.Size = new System.Drawing.Size(247, 38);
             this.exitBtn.Text = "Exit";
             this.exitBtn.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -98,7 +98,7 @@ namespace ShutdownTimer
             // resetTimerBtn
             // 
             this.resetTimerBtn.Name = "resetTimerBtn";
-            this.resetTimerBtn.Size = new System.Drawing.Size(300, 38);
+            this.resetTimerBtn.Size = new System.Drawing.Size(247, 38);
             this.resetTimerBtn.Text = "Reset timer";
             this.resetTimerBtn.Click += new System.EventHandler(this.ResetTimerBtn_Click);
             // 
@@ -111,7 +111,7 @@ namespace ShutdownTimer
             this.min90Btn,
             this.min120Btn});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(300, 38);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(247, 38);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // min15Btn
@@ -158,7 +158,7 @@ namespace ShutdownTimer
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(297, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(244, 6);
             // 
             // toolStripLabel2
             // 
@@ -180,13 +180,13 @@ namespace ShutdownTimer
             this.hourBtn,
             this.dayBtn});
             this.unitToolStripMenuItem.Name = "unitToolStripMenuItem";
-            this.unitToolStripMenuItem.Size = new System.Drawing.Size(300, 38);
+            this.unitToolStripMenuItem.Size = new System.Drawing.Size(247, 38);
             this.unitToolStripMenuItem.Text = "In (time unit)";
             // 
             // minBtn
             // 
             this.minBtn.Name = "minBtn";
-            this.minBtn.Size = new System.Drawing.Size(359, 44);
+            this.minBtn.Size = new System.Drawing.Size(197, 44);
             this.minBtn.Tag = "m";
             this.minBtn.Text = "min";
             this.minBtn.Click += new System.EventHandler(this.SetTime_Click);
@@ -194,7 +194,7 @@ namespace ShutdownTimer
             // hourBtn
             // 
             this.hourBtn.Name = "hourBtn";
-            this.hourBtn.Size = new System.Drawing.Size(359, 44);
+            this.hourBtn.Size = new System.Drawing.Size(197, 44);
             this.hourBtn.Tag = "h";
             this.hourBtn.Text = "hour";
             this.hourBtn.Click += new System.EventHandler(this.SetTime_Click);
@@ -202,7 +202,7 @@ namespace ShutdownTimer
             // dayBtn
             // 
             this.dayBtn.Name = "dayBtn";
-            this.dayBtn.Size = new System.Drawing.Size(359, 44);
+            this.dayBtn.Size = new System.Drawing.Size(197, 44);
             this.dayBtn.Tag = "d";
             this.dayBtn.Text = "days";
             this.dayBtn.Click += new System.EventHandler(this.SetTime_Click);
@@ -212,6 +212,7 @@ namespace ShutdownTimer
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
