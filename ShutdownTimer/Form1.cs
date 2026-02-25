@@ -146,7 +146,11 @@ namespace ShutdownTimer {
         private void AddTime_Click(object sender, EventArgs e) {
             ToolStripMenuItem btn = (ToolStripMenuItem)sender;
             long time = long.Parse(btn.Tag.ToString());
-            logic.AddTimeInMinutes(time);
+            bool isValidValue = logic.AddTimeInMinutes(time);
+            if (!isValidValue ) {
+                HandleToLongDelay(logic.getTimeUntilShutdown() + time);
+                return;
+            }
             updateTimeLabel();
         }
 
@@ -162,10 +166,22 @@ namespace ShutdownTimer {
             }
         }
 
-        private void CustomDurationBox_TextChanged(object sender, EventArgs e) {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CustomDurationBox_TextChanged(object sender, EventArgs e) { 
             UpdateUnitMenuState();
         }
 
+        /// <summary>
+        /// Updates the enabled state of the unit selection menu item based on the current value of the custom duration
+        /// input box.
+        /// </summary>
+        /// <remarks>The unit selection menu item is enabled only when the custom duration input box
+        /// contains non-whitespace text. This ensures that unit selection is available only when a valid custom
+        /// duration is specified.</remarks>
         private void UpdateUnitMenuState() {
             unitToolStripMenuItem.Enabled = !string.IsNullOrWhiteSpace(customDuratationBox.Text);
         }
@@ -194,9 +210,28 @@ namespace ShutdownTimer {
             }
 
             if (time > 0) {
+                if (time > 315360000)
+                {
+                    HandleToLongDelay(time);
+                    return;
+                }
                 logic.shutdown(time);
                 updateTimeLabel();
             }
+            customDuratationBox.Text = "";
+        }
+
+        /// <summary>
+        /// Displays a warning message if the specified delay exceeds the maximum allowed duration of 10 years.
+        /// </summary>
+        /// <remarks>This method is intended to inform the user when an invalid duration is provided,
+        /// ensuring that the input adheres to the expected limits.</remarks>
+        /// <param name="delay">The duration, in milliseconds, that is being validated against the maximum allowed duration.</param>
+        private void HandleToLongDelay(long delay)
+        {
+            String message = $"The specified delay of {logic.formatTime(delay)} exceeds the maximum allowed duration of 10 years. Please enter a shorter duration.";
+            MessageBox.Show(message, "Invalid Duration", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
     }
 }
