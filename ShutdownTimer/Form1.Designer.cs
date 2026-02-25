@@ -182,7 +182,6 @@ namespace ShutdownTimer
             this.unitToolStripMenuItem.Name = "unitToolStripMenuItem";
             this.unitToolStripMenuItem.Size = new System.Drawing.Size(300, 38);
             this.unitToolStripMenuItem.Text = "In (time unit)";
-            this.unitToolStripMenuItem.Click += new System.EventHandler(this.unitToolStripMenuItem_Click);
             // 
             // minBtn
             // 
